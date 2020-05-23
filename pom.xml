@@ -3,16 +3,17 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.zz</groupId>
-    <artifactId>bamboo</artifactId>
+    <groupId>com.zz.bamboo</groupId>
+    <artifactId>root</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>pom</packaging>
-    <name>bamboo</name>
-    <description>Demo project for Spring Boot</description>
+    <name>root</name>
+    <description>bamboo parent</description>
 
     <modules>
         <module>common</module>
         <module>admin</module>
+        <module>mbg</module>
     </modules>
 
     <parent>
@@ -26,6 +27,8 @@
     <properties>
         <java.version>1.8</java.version>
         <swagger2.version>2.7.0</swagger2.version>
+        <bamboo-mbg.version>0.0.1-SNAPSHOT</bamboo-mbg.version>
+        <bamboo-common.version>0.0.1-SNAPSHOT</bamboo-common.version>
     </properties>
 
     <dependencies>
@@ -33,7 +36,6 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
-
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter</artifactId>
@@ -54,6 +56,18 @@
 
     <dependencyManagement>
         <dependencies>
+            <!--MBG生成模块-->
+            <dependency>
+              <groupId>com.zz.bamboo</groupId>
+                <artifactId>mbg</artifactId>
+                <version>${bamboo-mbg.version}</version>
+            </dependency>
+            <!--common 模块-->
+            <dependency>
+                <groupId>com.zz.bamboo</groupId>
+                <artifactId>common</artifactId>
+                <version>${bamboo-common.version}</version>
+            </dependency>
             <!--Swagger-UI API文档生产工具-->
             <dependency>
                 <groupId>io.springfox</groupId>
@@ -64,6 +78,18 @@
                 <groupId>io.springfox</groupId>
                 <artifactId>springfox-swagger-ui</artifactId>
                 <version>${swagger2.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>javax.validation</groupId>
+                <artifactId>validation-api</artifactId>
+                <version>${javax-validation.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>${lombok.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>

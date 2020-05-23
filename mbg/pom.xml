@@ -2,13 +2,6 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-
-    <groupId>com.zz.bamboo</groupId>
-    <artifactId>admin</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
-    <name>admin</name>
-    <description>Demo project for Spring Boot</description>
-
     <parent>
         <groupId>com.zz.bamboo</groupId>
         <artifactId>root</artifactId>
@@ -16,15 +9,15 @@
     </parent>
 
 
+    <groupId>com.zz.bamboo</groupId>
+    <artifactId>mbg</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <packaging>jar</packaging>
+    <name>mbg</name>
+    <description>Demo project for Spring Boot</description>
+
+
     <dependencies>
-        <dependency>
-            <groupId>com.zz.bamboo</groupId>
-            <artifactId>mbg</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>com.zz.bamboo</groupId>
-            <artifactId>common</artifactId>
-        </dependency>
         <dependency>
             <groupId>io.springfox</groupId>
             <artifactId>springfox-swagger2</artifactId>
@@ -33,11 +26,6 @@
             <groupId>io.springfox</groupId>
             <artifactId>springfox-swagger-ui</artifactId>
         </dependency>
-        <dependency>
-            <groupId>javax.validation</groupId>
-            <artifactId>validation-api</artifactId>
-        </dependency>
-
     </dependencies>
 
     <build>
