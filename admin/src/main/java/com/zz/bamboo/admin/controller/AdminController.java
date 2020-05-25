@@ -3,7 +3,7 @@ package com.zz.bamboo.admin.controller;
 import com.zz.bamboo.admin.dto.AdminParam;
 import com.zz.bamboo.admin.service.AdminService;
 import com.zz.bamboo.common.api.CommonResult;
-import com.zz.bamboo.mbg.model.admin.Admin;
+import com.zz.bamboo.admin.model.Admin;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;

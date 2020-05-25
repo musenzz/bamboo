@@ -2,7 +2,7 @@ package com.zz.bamboo.admin.service;
 
 
 import com.zz.bamboo.admin.dto.AdminParam;
-import com.zz.bamboo.mbg.model.admin.Admin;
+import com.zz.bamboo.admin.model.Admin;
 
 public interface AdminService {
     /**
