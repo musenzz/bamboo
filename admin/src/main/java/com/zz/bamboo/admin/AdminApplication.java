@@ -10,7 +10,6 @@ import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 public class AdminApplication {
 
     public static void main(String[] args) {
-        System.out.println("dd");
         SpringApplication.run(AdminApplication.class, args);
     }
 

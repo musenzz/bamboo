@@ -25,11 +25,11 @@ public class AdminController {
     @ApiOperation(value = "用户注册")
     @RequestMapping(value = "/register", method = RequestMethod.POST)
     @ResponseBody
-    public CommonResult<Admin> register(@RequestBody AdminParam umsAdminParam, BindingResult result) {
-        Admin umsAdmin = adminService.register(umsAdminParam);
-        if (umsAdmin == null) {
+    public CommonResult<Admin> register(@RequestBody AdminParam adminParam, BindingResult result) {
+        Admin admin = adminService.register(adminParam);
+        if (admin == null) {
             CommonResult.failed();
         }
-        return CommonResult.success(umsAdmin);
+        return CommonResult.success(admin);
     }
 }
