@@ -5,7 +5,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 
-@SpringBootApplication()
+@SpringBootApplication(scanBasePackages = {"com.zz.bamboo.*"})
 @MapperScan({"com.zz.bamboo.admin.mapper"})
 public class AdminApplication {
 

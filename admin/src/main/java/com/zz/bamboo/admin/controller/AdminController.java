@@ -25,7 +25,7 @@ public class AdminController {
     @ApiOperation(value = "用户注册")
     @RequestMapping(value = "/register", method = RequestMethod.POST)
     @ResponseBody
-    public CommonResult<Admin> register(@RequestBody AdminParam adminParam, BindingResult result) {
+    public CommonResult<Admin> register(@RequestBody AdminParam adminParam, BindingResult result) throws Exception {
         Admin admin = adminService.register(adminParam);
         if (admin == null) {
             CommonResult.failed();

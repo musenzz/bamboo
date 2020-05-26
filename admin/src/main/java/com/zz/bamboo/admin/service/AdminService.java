@@ -8,5 +8,5 @@ public interface AdminService {
     /**
      * 注册功能
      */
-    Admin register(AdminParam adminParam);
+    Admin register(AdminParam adminParam) throws Exception;
 }
