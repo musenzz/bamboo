@@ -14,6 +14,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import javax.servlet.http.HttpServletRequest;
+import java.util.HashMap;
+import java.util.Map;
+
 @Controller
 @Api(tags = "AdminController")
 @RequestMapping("/admin")
@@ -22,7 +26,7 @@ public class AdminController {
     @Autowired
     private AdminService adminService;
 
-    @ApiOperation(value = "用户注册")
+    @ApiOperation(value = "register")
     @RequestMapping(value = "/register", method = RequestMethod.POST)
     @ResponseBody
     public CommonResult<Admin> register(@RequestBody AdminParam adminParam, BindingResult result) throws Exception {
@@ -31,5 +35,20 @@ public class AdminController {
             CommonResult.failed();
         }
         return CommonResult.success(admin);
+    }
+
+    @ApiOperation(value = "login")
+    @RequestMapping(value = "/login", method = RequestMethod.POST)
+    @ResponseBody
+    public CommonResult login(){
+
+        return null;
+    }
+
+    @ApiOperation(value = "refreshToken")
+    @RequestMapping(value = "/refreshToken", method = RequestMethod.GET)
+    @ResponseBody
+    public CommonResult refreshToken(HttpServletRequest request) {
+        return CommonResult.success("");
     }
 }

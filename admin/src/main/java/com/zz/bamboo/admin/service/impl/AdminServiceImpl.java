@@ -27,11 +27,11 @@ public class AdminServiceImpl implements AdminService {
         admin.setStatus(1);
         AdminExample example = new AdminExample();
         example.createCriteria().andUsernameEqualTo(admin.getUsername());
-        List<Admin
-                > umsAdminList = adminMapper.selectByExample(example);
+        List<Admin> umsAdminList = adminMapper.selectByExample(example);
         if (umsAdminList.size() > 0) {
             return null;
         }
+        adminMapper.insert(admin);
         return admin;
     }
 }
