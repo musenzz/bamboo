@@ -32,6 +32,6 @@ public class AdminServiceImpl implements AdminService {
         if (umsAdminList.size() > 0) {
             return null;
         }
-        throw new Exception("Sam 错误");
+        return admin;
     }
 }

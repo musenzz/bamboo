@@ -3,8 +3,11 @@ package com.zz.bamboo.admin.mapper;
 import com.zz.bamboo.admin.model.Admin;
 import com.zz.bamboo.admin.model.AdminExample;
 import java.util.List;
+
+import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
+@Mapper
 public interface AdminMapper {
     long countByExample(AdminExample example);
 

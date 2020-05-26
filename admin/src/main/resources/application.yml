@@ -36,4 +36,4 @@ spring:
 mybatis:
   mapperLocations: classpath:mapper/*.xml
   config-location: classpath:mybatis-config.xml
-  typeAliasesPackage: com.example.domain
+  typeAliasesPackage: com.zz.bamboo.admin.model
