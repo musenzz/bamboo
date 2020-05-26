@@ -1,5 +1,6 @@
 package com.zz.bamboo.admin.controller;
 
+import com.zz.bamboo.admin.dto.AdminLoginParam;
 import com.zz.bamboo.admin.dto.AdminParam;
 import com.zz.bamboo.admin.service.AdminService;
 import com.zz.bamboo.common.api.CommonResult;
@@ -40,9 +41,15 @@ public class AdminController {
     @ApiOperation(value = "login")
     @RequestMapping(value = "/login", method = RequestMethod.POST)
     @ResponseBody
-    public CommonResult login(){
-
-        return null;
+    public CommonResult login(@RequestBody AdminLoginParam loginParam, BindingResult result){
+        String token = adminService.login(loginParam.getUsername(), loginParam.getPassword());
+        if (token == null) {
+            return CommonResult.validateFailed("用户名或密码错误");
+        }
+        Map<String, String> tokenMap = new HashMap<>();
+        tokenMap.put("token", token);
+        tokenMap.put("tokenHead", tokenHead);
+        return CommonResult.success(tokenMap);
     }
 
     @ApiOperation(value = "refreshToken")
